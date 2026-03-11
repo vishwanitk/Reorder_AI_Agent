@@ -225,7 +225,7 @@ with st.sidebar:
         for k in ["po_df", "sku_result", "last_workflow", "exec_result"]:
             st.session_state[k] = None
         st.session_state.executed = False
-        st.experimental_rerun()
+        st.rerun()
 
     if sc.action_log:
         st.markdown("---")
@@ -396,7 +396,7 @@ if st.session_state.sku_result:
                     "total_value": po_df["estimated_value"].sum(),
                     "filepath":    filepath,
                 }
-                st.experimental_rerun()
+                st.rerun()
 
         else:
             res = st.session_state.exec_result
